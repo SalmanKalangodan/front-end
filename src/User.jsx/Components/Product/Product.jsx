@@ -14,6 +14,7 @@ function Product() {
  
   const token = localStorage.getItem('token')
   const {id} = useParams()
+  const [count, setCount] = useState(1)
   const [carti, setCarti] = useState()
   const dispacth =useDispatch()
   const [product ,setProduct] = useState([])
@@ -24,7 +25,7 @@ function Product() {
     dispacth(GetProductsId(id)).then((res)=>{
         setProduct(res.payload)
     })
-  },[dispacth, id, product])
+  },[product])
   // const product = useSelector(  (state) => state.ApiSlice.ProductId)
 
   useEffect(() => {
@@ -48,7 +49,6 @@ function Product() {
   };
   
 
-  
  const  HandleCart =()=>{
   dispacth(Cart(true))
  }

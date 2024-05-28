@@ -1,19 +1,24 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['@heroicons/react/20/solid','@headlessui/react'],
-      chunkSizeWarningLimit: 1000,
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'redux-vendor': ['react-redux', '@reduxjs/toolkit'],
+          'ui-vendor': ['@headlessui/react', '@heroicons/react/solid'],
+          'product-page': ['/src/User.jsx/Components/Product/Product.jsx'],
+        },
+        chunkFileNames: 'static/js/[name].[hash].js',
+        entryFileNames: 'static/js/[name].[hash].js',
+        assetFileNames: 'static/assets/[name].[hash].[ext]',
+      },
     },
-    alias: {
-      // eslint-disable-next-line no-undef
-      '@': path.resolve(__dirname, 'src')
-    }
-  }
+    chunkSizeWarningLimit: 1000,
+  },
 });
 
 
