@@ -1,22 +1,19 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import {  useEffect, useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
-import { useNavigate, useParams } from 'react-router-dom'
-import axios from 'axios'
+import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import './Product.css'
 import { useDispatch, useSelector } from 'react-redux'
 import {  GetProductsId, PostWishlist, addcart } from '../../../Redux/ApiSlice/Tunk/Tunk'
-import { IconName } from '@heroicons/react/20/solid';
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 import { Cart } from '../../../Redux/SearchSlice/SearchSlice'
 
 function Product() {
-  const navigate = useNavigate()
+ 
   const token = localStorage.getItem('token')
   const {id} = useParams()
-  const [count, setCount] = useState(1)
   const [carti, setCarti] = useState()
   const dispacth =useDispatch()
   const [product ,setProduct] = useState([])
@@ -27,7 +24,7 @@ function Product() {
     dispacth(GetProductsId(id)).then((res)=>{
         setProduct(res.payload)
     })
-  },[product])
+  },[dispacth, id, product])
   // const product = useSelector(  (state) => state.ApiSlice.ProductId)
 
   useEffect(() => {
@@ -51,12 +48,7 @@ function Product() {
   };
   
 
-  const De = () => {
-    if (count == 1) {
-      setCount(count + 1)
-    }
-    setCount(pvr => pvr - 1)
-  }
+  
  const  HandleCart =()=>{
   dispacth(Cart(true))
  }
