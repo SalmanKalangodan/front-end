@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import './Product.css'
 import { useDispatch, useSelector } from 'react-redux'
 import {  GetProductsId, PostWishlist, addcart } from '../../../Redux/ApiSlice/Tunk/Tunk'
-
+import { IconName } from '@heroicons/react/20/solid';
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 import { Cart } from '../../../Redux/SearchSlice/SearchSlice'
