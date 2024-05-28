@@ -42,7 +42,7 @@ function Navbar() {
     dispatch(GetWishlist()).then((res)=>{
       setWishlist(res.payload.length);
     })
-  },[cartlength , profile , dispatch , wishlength])
+  },[cartlength , profile, wishlength])
  
   
   const Logout = () => {

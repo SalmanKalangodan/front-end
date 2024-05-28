@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['@heroicons/react/20/solid','@headlessui/react']
+      external: ['@heroicons/react/20/solid','@headlessui/react'],
+      chunkSizeWarningLimit: 1000,
     },
     alias: {
       // eslint-disable-next-line no-undef

@@ -100,7 +100,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
         const res = await axios.get(`${baseurl+userapi}/cart` , consfig)
         return res.data
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
   })
 
