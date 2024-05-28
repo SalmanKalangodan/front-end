@@ -5,21 +5,24 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
+      external: ['@headlessui/react'],
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'redux-vendor': ['react-redux', '@reduxjs/toolkit'],
-          'ui-vendor': ['@headlessui/react', '@heroicons/react/solid'],
-          'product-page': ['/src/User.jsx/Components/Product/Product.jsx'],
+          // Removed @headlessui/react from manualChunks
+          // You can further split other chunks if needed
         },
         chunkFileNames: 'static/js/[name].[hash].js',
         entryFileNames: 'static/js/[name].[hash].js',
         assetFileNames: 'static/assets/[name].[hash].[ext]',
       },
     },
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 1000, // Increase the limit if necessary
   },
 });
+
+
 
 
 
