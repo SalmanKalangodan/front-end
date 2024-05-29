@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../Components/Navbar/Navbar';
 import Footer from '../Components/Footer/Footer';
-import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { AdminProducts, DeleteProduct, GetProducts, HideProduct } from '../../Redux/ApiSlice/Tunk/Tunk';
-import AdminDashboard from '../adminDashboard/AdminDashboard';
+import { AdminProducts, DeleteProduct,  HideProduct } from '../../Redux/ApiSlice/Tunk/Tunk';
+
 
 function Home() {
  
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [products , setProducts] = useState([])
- const [prop , setProps] = useState('a')
   useEffect(() => {
     dispatch(AdminProducts()).then((res)=>{
       setProducts(res.payload)
     })
-      // Handle API errors gracefully
+    
   }, [products]);
 //  const products = useSelector((state)=>state.ApiSlice.data)
 
@@ -39,7 +36,6 @@ function Home() {
       <div className="container mx-auto py-8 px-4">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold ">All Products</h2>
-          <Link to="/admin/post" className="btn btn-primary">Add New Product</Link>
         </div>
         <div className="table-responsive overflow-x-auto rounded-lg shadow"> {/* Responsive table container */}
           <table className="table w-full text-sm text-left table-striped"> {/* Basic table structure */}

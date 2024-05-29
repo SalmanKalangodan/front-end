@@ -14,12 +14,7 @@ function Post() {
  const dispacth= useDispatch()
   const handleSubmit = (e) => {
     e.preventDefault()
-     
-     console.log(image);
       dispacth(addProducts({ title, price, image, description, category }))
-     
-    
-
   }
   return (
     <>

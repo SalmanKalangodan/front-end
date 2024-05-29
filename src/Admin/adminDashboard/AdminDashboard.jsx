@@ -12,28 +12,6 @@ import AdminOrders from '../Components/Orders/Orrders';
 import { useNavigate } from 'react-router-dom';
 
 
-// Dummy Data
-// const users = [
-//   { id: 1, name: 'John Doe', email: 'john@example.com', isDeleted: false },
-//   { id: 2, name: 'Jane Smith', email: 'jane@example.com', isDeleted: true },
-//   // Add more users as needed
-// ];
-
-// const products = [
-//   { id: 1, name: 'Product A', price: '$100', stock: 20 },
-//   { id: 2, name: 'Product B', price: '$150', stock: 15 },
-//   // Add more products as needed
-// ];
-
-// const orders = [
-//   { id: 1, customer: 'John Doe', total: '$100', status: 'Pending' },
-//   { id: 2, customer: 'Jane Smith', total: '$150', status: 'Completed' },
-//   // Add more orders as needed
-// ];
-
-// // Dummy sales data
-// const totalSales = 25000; // This could be fetched from your backend
-// const salesData = [5000, 10000, 7500, 15000, 20000, 25000, 30000]; // Weekly sales data example
 
 
 const AdminDashboard = () => {
