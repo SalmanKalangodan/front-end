@@ -16,13 +16,13 @@ const OrderDetails = () => {
         totalCost: 139.94
       };
   return (
-    <div className="w-full bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-10">
-    <div className="max-w-5xl mx-auto bg-white shadow-xl rounded-lg p-6">
+    <div className="w-full min-h-screen bg-gray-100 flex items-center justify-center py-10">
+    <div className="max-w-5xl w-full bg-white shadow-md rounded-lg p-8">
       <h2 className="text-3xl font-bold mb-6 text-gray-800">Order Details</h2>
       
       <div className="mb-8">
         <h3 className="text-xl font-semibold text-gray-700">Order Information</h3>
-        <div className="mt-3 space-y-1 text-gray-600">
+        <div className="mt-3 space-y-2 text-gray-600">
           <p><span className="font-medium">Order Number:</span> {order.orderNumber}</p>
           <p><span className="font-medium">Date:</span> {order.date}</p>
           <p><span className="font-medium">Status:</span> {order.status}</p>
@@ -33,7 +33,7 @@ const OrderDetails = () => {
         <h3 className="text-xl font-semibold text-gray-700">Items</h3>
         <div className="mt-4 space-y-4">
           {order.items.map((item, index) => (
-            <div key={index} className="p-4 bg-gray-100 rounded-lg flex items-center">
+            <div key={index} className="p-4 bg-gray-50 rounded-lg flex items-center shadow-sm">
               <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-lg mr-4"/>
               <div>
                 <p className="text-lg font-medium text-gray-800">{item.name}</p>
