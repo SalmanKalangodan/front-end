@@ -16,7 +16,7 @@ const OrderDetails = () => {
         totalCost: 139.94
       };
   return (
-    <div className="w-full min-h-screen bg-gray-100 flex items-center justify-center py-10">
+    <div className="w-screen min-h-full bg-gray-100 flex items-center justify-center py-10">
     <div className="max-w-5xl w-full bg-white shadow-md rounded-lg p-8">
       <h2 className="text-3xl font-bold mb-6 text-gray-800">Order Details</h2>
       
