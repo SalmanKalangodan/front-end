@@ -24,7 +24,6 @@ const ProfileEdit = () => {
     
     //   try {
          dispacth(GetProfile()).then((res)=>{
-            console.log(res.payload);
              setProfile(res.payload);
              setImagePreview(res.payload.profileimg)
          })

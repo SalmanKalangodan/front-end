@@ -50,7 +50,7 @@ function Post() {
                 Upload Image
                 <input type="file" id="fileUpload" className="hidden" onChange={(e)=>setUrl(e.target.files[0])}  />
               </label>
-              {image && <img src={image.name} alt="Product Preview" className="ml-4 h-10" />}
+              {image && <img src={URL.createObjectURL(image)} alt="Product Preview" className="ml-4 h-10" />}
             </div>
           </div>
           <div className="form-control">
