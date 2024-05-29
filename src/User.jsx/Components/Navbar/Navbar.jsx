@@ -131,7 +131,7 @@ function Navbar() {
                     {name}
                   </a>
                 </li>
-                <li><Link to={'/profil'}>Profile</Link></li>
+                <li><Link to={'/profile'}>Profile</Link></li>
                 <li><a>Orders</a></li>
                 <li onClick={Logout}><a>Logout</a></li>
               </ul>
