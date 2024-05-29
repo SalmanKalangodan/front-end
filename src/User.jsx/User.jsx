@@ -15,6 +15,7 @@ import SuccessPayment from './Components/SuccessPayment/SuccessPayment'
 import Wishlist from './Components/Wishlisht/Wishlist'
 import ProfileEdit from './Components/ProfileEdit/ProfileEdit'
 import ProfileView from './Components/Profile/Profile'
+import OrderDetails from './Components/orders/Orders'
 
 function User() {
   const [search ,setSearch] =useState("")
@@ -41,6 +42,7 @@ function User() {
             <Route path='/wishlist' element={<Wishlist />}/>
             <Route path='/profile/edit' element={<ProfileEdit />}/>
             <Route path='/profile' element={<ProfileView />}/>
+            <Route path='/orders' element={<OrderDetails />}/> 
         </Routes>
         
         </Cartcontext.Provider>
