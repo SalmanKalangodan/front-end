@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     outDir: 'build', // Add this line
     rollupOptions: {
-      external: ['@headlessui/react'],
+      external: [],
     },
   },
 });
