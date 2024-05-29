@@ -105,9 +105,9 @@ const AdminDashboard = () => {
         <main className="p-6">
           {nav === '' ?<><h1 className="text-3xl font-bold mb-6">Dashboard</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-6">
-            <DashboardCard title="Total Users" count={users.length} bgColor="bg-blue-500" />
-            <DashboardCard title="Total Products" count={products.length} bgColor="bg-green-500" />
-            <DashboardCard title="Out of Stock" count={products.filter(p => p.stock === 0).length} bgColor="bg-red-500" />
+            <DashboardCard title="Total Users" count={users?.length} bgColor="bg-blue-500" />
+            <DashboardCard title="Total Products" count={products?.length} bgColor="bg-green-500" />
+            <DashboardCard title="Out of Stock" count={products?.filter(p => p.stock === 0).length} bgColor="bg-red-500" />
             <DashboardCard title="Total Sales" count={sales?.total?.total_revenue} bgColor="bg-yellow-500" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
@@ -201,8 +201,8 @@ const OrdersTable = ({ orders }) => (
         <tbody className="bg-white">
           {orders.map(order => (
             <tr key={order.id} className="border-b">
-              <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5">{order.address.split(' ').splice(11,1).join().split(',').splice(0,1).join()}</td>
-              <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5"> ₹ {order.totalprice}</td>
+              <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5">{order?.address?.split(' ').splice(11,1).join().split(',').splice(0,1).join()}</td>
+              <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5"> ₹ {order?.totalprice}</td>
               <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5">
                 <span
                   className={`px-2 py-1 rounded-full text-xs ${
@@ -211,7 +211,7 @@ const OrdersTable = ({ orders }) => (
                       : 'bg-green-100 text-green-800'
                   }`}
                 >
-                  {order.status}
+                  {order?.status}
                 </span>
               </td>
             </tr>
