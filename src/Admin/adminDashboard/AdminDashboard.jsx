@@ -46,7 +46,7 @@ const AdminDashboard = () => {
     setOrders(res.payload.splice(5 , 5))
   })
 
- },[])
+ },[orders,salesData,sales,products,users,nav,open,dispacth])
  
  const HandleLogout = () =>{
   localStorage.clear()

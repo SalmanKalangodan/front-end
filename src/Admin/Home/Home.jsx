@@ -23,7 +23,6 @@ function Home() {
   };
 
   const handleDelete = (id) => {
-    console.log(id);
     dispatch(DeleteProduct(id))
   };
 
