@@ -43,11 +43,11 @@ const AdminDashboard = () => {
   })
 
   dispacth(AdminOrder()).then((res)=>{
-    setOrders(res.payload)
+    setOrders(res.payload.splice(5,5))
     
   })
 
- },[orders,salesData,sales,products,users,nav,open,dispacth])
+ },[])
 
  const HandleLogout = () =>{
   localStorage.clear()

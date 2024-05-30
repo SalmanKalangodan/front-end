@@ -36,7 +36,7 @@ function Product() {
   useEffect(() => {
     dispatch(GetProductsId(id)).then((res) => setProduct(res.payload));
   }, [dispatch, id]);
-
+   console.log(product);
   useEffect(() => {
     if (cart) {
       const cartItem = cart.find((item) => item.id === id);

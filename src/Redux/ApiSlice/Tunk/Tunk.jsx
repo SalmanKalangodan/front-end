@@ -327,7 +327,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
     try {
       
         await axios.post(`${baseurl+userapi}/${data.id}/wishlists`,{size : data.selectedSize._id},consfig).then((res)=>{
-            toast.success(res.data)
+            // toast.success(res.data)
         })
     } catch (error) {
         // toast.error(error.response.data);
