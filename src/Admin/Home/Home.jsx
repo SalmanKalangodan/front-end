@@ -59,7 +59,7 @@ function Home() {
                   </td>
                   <td className="px-4 py-3">{product.title}</td>
                   <td className="px-4 py-3 text-gray-600">{product.description.substring(0, 50)}...</td> {/* Truncate description for space */}
-                  <td className="px-4 py-3">${product.price}</td>
+                  <td className="px-4 py-3">  ₹ {product.price}</td>
                   <td className="px-4 py-3">
                     <div className="flex space-x-2">
                       <button

@@ -179,8 +179,8 @@ const OrdersTable = ({ orders }) => (
           </tr>
         </thead>
         <tbody className="bg-white">
-          {orders?.map(order => (
-            <tr key={order.id} className="border-b">
+          {orders?.map((order , i) => (
+            <tr key={order?._id || i} className="border-b">
               <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5">{order?.userId.username}</td>
               <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5"> ₹ {order?.totalprice}</td>
               <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5">

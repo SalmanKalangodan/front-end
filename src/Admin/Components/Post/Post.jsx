@@ -1,22 +1,33 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { addProducts } from '../../../Redux/ApiSlice/Tunk/Tunk'
-
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addProducts } from '../../../Redux/ApiSlice/Tunk/Tunk';
 
 function Post() {
-  const [title, setName] = useState("")
-  const [price, setPrice] = useState()
-  const [image, setUrl] = useState("")
-  const [description, setDetails] = useState("")
-  const [category, setCategory] = useState("")
+  const [title, setName] = useState("");
+  const [price, setPrice] = useState(""); // Initialize with an empty string
+  const [image, setUrl] = useState(""); // Initialize with an empty string
+  const [description, setDetails] = useState("");
+  const [category, setCategory] = useState("");
  
- const dispacth= useDispatch()
+  const dispatch = useDispatch();
+
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0];
+    setUrl(file ? URL.createObjectURL(file) : "");
+  };
+
   const handleSubmit = (e) => {
-    e.preventDefault()
-      dispacth(addProducts({ title, price, image, description, category }))
-  }
+    e.preventDefault();
+    dispatch(addProducts({ title, price, image, description, category })).then(() => {
+      setName('');
+      setPrice('');
+      setUrl('');
+      setDetails('');
+      setCategory('');
+    });
+  };
+
   return (
-    <>
     <div className='justify-center'>
       <div className="shrink-0 w-full max-w-l shadow-2xl bg-gray-200">
         <form className="card-body" onSubmit={handleSubmit}>
@@ -42,16 +53,16 @@ function Post() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
                 Upload Image
-                <input type="file" id="fileUpload" className="hidden" onChange={(e)=>setUrl(e.target.files[0])}  />
+                <input type="file" id="fileUpload" className="hidden" onChange={handleFileUpload} />
               </label>
-              {image && <img src={URL.createObjectURL(image)} alt="Product Preview" className="ml-4 h-10" />}
+              {image && <img src={image} alt="Product Preview" className="ml-4 h-10" />}
             </div>
           </div>
           <div className="form-control">
             <label htmlFor="details" className="label">
               <span className="label-text">Details</span>
             </label>
-            <textarea id="details" placeholder="Details" className="textarea textarea-bordered bg-white" required  onChange={(e) => setDetails(e.target.value)}></textarea>
+            <textarea id="details" placeholder="Details" className="textarea textarea-bordered bg-white" required value={description} onChange={(e) => setDetails(e.target.value)}></textarea>
           </div>
           <div className="form-control">
             <label htmlFor="category" className="label">
@@ -70,10 +81,7 @@ function Post() {
         </form>
       </div>
     </div>
-  </>
-  
-  
-  )  
+  );
 }
 
-export default Post
+export default Post;
