@@ -43,7 +43,8 @@ const AdminDashboard = () => {
   })
 
   dispacth(AdminOrder()).then((res)=>{
-    setOrders(res.payload.splice(5,5))
+    const data =res.payload
+    setOrders(data.splice(data.length-6,5))
     
   })
 
