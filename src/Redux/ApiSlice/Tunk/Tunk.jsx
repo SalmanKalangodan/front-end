@@ -112,7 +112,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
  export const addProducts = createAsyncThunk ('addproduct' , async(formdata)=>{
     try {
         await axios.post(`${baseurl+adminapi}/products`,formdata ,adminconsfig ).then((res)=>{
-            // toast.success(res.data)
+            toast.success(res.data)
         })
     } catch (error) {
         // toast.error(error.response.data);

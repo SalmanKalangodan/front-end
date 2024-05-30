@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import Navbar from '../Navbar/Navbar'
-import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { addProducts } from '../../../Redux/ApiSlice/Tunk/Tunk'
+
 
 function Post() {
   const [title, setName] = useState("")
@@ -10,7 +9,7 @@ function Post() {
   const [image, setUrl] = useState("")
   const [description, setDetails] = useState("")
   const [category, setCategory] = useState("")
-  
+ 
  const dispacth= useDispatch()
   const handleSubmit = (e) => {
     e.preventDefault()
