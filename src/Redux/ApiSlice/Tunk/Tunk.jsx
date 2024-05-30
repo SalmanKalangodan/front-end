@@ -368,7 +368,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
  export const CartIncrement = createAsyncThunk('cartIncrement' , async (id) =>{
     try {
         await axios.put(`${baseurl+userapi}/cart/increment/${id}`,{},consfig).then((res)=>{
-            toast.success(res.data)
+            // toast.success(res.data)
         })
     } catch (error) {
         // toast.error(error.response.data);
@@ -378,7 +378,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
  export const CartDecrement = createAsyncThunk('cartdetcrement' , async (id) =>{
     try {
         await axios.put(`${baseurl+userapi}/cart/decrement/${id}`,{},consfig).then((res)=>{
-            toast.success(res.data.message)
+            // toast.success(res.data.message)
         })
     } catch (error) {
         console.log(error);
