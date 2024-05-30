@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GetProducts, GetProductsId, GetUserId, GetUsers, Getcart} from "./Tunk/Tunk";
+import { GetProducts, GetProductsId,  Getcart} from "./Tunk/Tunk";
 
 
 
@@ -19,13 +19,9 @@ export const ApiSlice = createSlice({
         state.data = action.payload
       })
     // Get All Users 
-      builder.addCase(GetUsers.fulfilled,(state,action)=>{
-          state.users = action.payload
-      })
+     
     //Get User With Id
-      builder.addCase(GetUserId.fulfilled,(state,action)=>{
-          state.userId = action.payload
-      })
+     
     //Add Products in Cart
       builder.addCase(Getcart.fulfilled,(state,action) =>{
           state.cart=action.payload

@@ -6,6 +6,7 @@ import Edit from './Components/Edit/Edit'
 import AddSizeStock from './Addsize/AddSizeStock'
 import ProductView from './Components/Productview/ProductView'
 import AdminDashboard from './adminDashboard/AdminDashboard'
+import OrderDetails from './Components/Orderslist/Orders'
 
 
 
@@ -23,6 +24,7 @@ function Admin() {
         <Route path='/edit/:id' element={<Edit />} />
         <Route path='admin/addsize/:id' element = {<AddSizeStock />} />
         <Route path='admin/product/:id' element = {<ProductView />} />
+        <Route path='admin//orders/:id' element = {<OrderDetails />} />
       </Routes> : null}
 
     </div>

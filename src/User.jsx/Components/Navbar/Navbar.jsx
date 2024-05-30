@@ -3,9 +3,9 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import './Navbar.css'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Search, Category , Cart} from '../../../Redux/SearchSlice/SearchSlice'
-import { GetProducts, GetProfile, GetUserId, GetUsers, GetWishlist, Getcart, Getusers } from '../../../Redux/ApiSlice/Tunk/Tunk'
+import { GetProducts, GetProfile,  GetWishlist, Getcart } from '../../../Redux/ApiSlice/Tunk/Tunk'
 import Example from '../Pro/Example'
 
 
@@ -19,16 +19,13 @@ function Navbar() {
   const login = localStorage.getItem('token')
   const [cartlength , setCartLength] = useState(0)
   const dispatch = useDispatch()
-  const userId = useSelector((state)=>state.ApiSlice.userId)
   const name = localStorage.getItem('username')
-  const cart =userId.Cart
   const Navigate = useNavigate()
   const [profile , setProfile] = useState() 
   const [wishlength , setWishlist] = useState(0)
 
   useEffect(() => {
     dispatch(GetProducts())
-    dispatch(GetUsers())
     dispatch(GetProfile()).then((res)=>{
       setProfile(res.payload.profileimg);
     })

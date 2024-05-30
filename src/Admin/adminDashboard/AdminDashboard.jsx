@@ -43,11 +43,12 @@ const AdminDashboard = () => {
   })
 
   dispacth(AdminOrder()).then((res)=>{
-    setOrders(res.payload.splice(5 , 5))
+    setOrders(res.payload)
+    
   })
 
  },[orders,salesData,sales,products,users,nav,open,dispacth])
- 
+
  const HandleLogout = () =>{
   localStorage.clear()
   Navigate('/admin/login')
@@ -177,9 +178,9 @@ const OrdersTable = ({ orders }) => (
           </tr>
         </thead>
         <tbody className="bg-white">
-          {orders.map(order => (
+          {orders?.map(order => (
             <tr key={order.id} className="border-b">
-              <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5">{order?.address?.split(' ').splice(11,1).join().split(',').splice(0,1).join()}</td>
+              <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5">{order?.userId.username}</td>
               <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5"> ₹ {order?.totalprice}</td>
               <td className="px-6 py-4 whitespace-no-wrap text-sm leading-5">
                 <span

@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { useDispatch, useSelector } from 'react-redux'
 import { Cart } from '../../../Redux/SearchSlice/SearchSlice'
-import { CartDecrement, CartIncrement, CartTotal, DeleteCart, Getcart, RemoveCart } from '../../../Redux/ApiSlice/Tunk/Tunk'
+import { CartDecrement, CartIncrement, CartTotal, DeleteCart, Getcart } from '../../../Redux/ApiSlice/Tunk/Tunk'
 import { Link } from 'react-router-dom'
 
 

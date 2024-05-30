@@ -28,13 +28,11 @@ const AddressCard = () => {
   }
   
   const HandleBuy = () =>{
-      dispacth(Payment()).then((res)=>{
-       
-      })
+      dispacth(Payment())
   }
   return (
     <>
-    <Nav2 />
+    <Navbar />
    
     { addresses.length !== 21 ? addresses?.map((address, index) => (
     

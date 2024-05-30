@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { GetProducts, GetUsers } from '../../../Redux/ApiSlice/Tunk/Tunk'
+import { GetProducts} from '../../../Redux/ApiSlice/Tunk/Tunk'
 
 function Navbar() {
   const dispacth = useDispatch()
   useEffect(()=>{
     dispacth(GetProducts())
-    dispacth(GetUsers())
   })
   return (
     // <div>

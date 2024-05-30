@@ -14,25 +14,14 @@ export const GetProducts= createAsyncThunk("GetItem" , async ()=>{
         return ref.data
 })
 //Get All Users
-export const GetUsers = createAsyncThunk("GetUser", async () =>{
-    const ref = await axios.get('http://localhost:3000/users')
-    return ref.data
-} )
+
 //Get User With Using Id
-export const GetUserId = createAsyncThunk('GetUserId', async (uid) =>{
-   const ref = await axios.get(`http://localhost:3000/users/${uid}`)
-   return ref.data
-})
+
 //Post Users In Registraion
 // export const PostUser = createAsyncThunk('Postuser', async (formData)=>{
 //     await axios.post(`http://localhost:3000/users`,formData ).then(alert('success'))
 // })
 
-//Remove Product From The Cart
-export const RemoveCart = createAsyncThunk("RemoveCart" , async ({ uid , datas , cart})=>{
-      await axios.patch(`http://localhost:3000/users/${uid}`,{...datas, Cart: cart })
-      .then(alert('remove')).then()
-})
 
 //Get Products Using Id 
 export const GetProductsId =createAsyncThunk('GetProductsId' , async (Pid)=>{
@@ -114,7 +103,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
         toast.success(res.data.messasge)
     })
    } catch (error) {
-    toast.error(error.message)
+    // toast.error(error.message)
    }
  })  
 
@@ -126,7 +115,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             // toast.success(res.data)
         })
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 // remove cart
@@ -136,7 +125,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
            toast.success(res.data)
         })
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -149,7 +138,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             toast.success(res.data)
         })
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -160,7 +149,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             toast.success(res.data)
         })
     } catch (error) {
-        toast.error(error.response.data);   
+        // toast.error(error.response.data);   
     }
    
  })
@@ -172,7 +161,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             toast.success(res.data)
         })
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -184,7 +173,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             toast.success(res.data)
         })
     } catch (error) {
-        toast.success(error.response.data);
+        // toast.success(error.response.data);
     }
  })
 
@@ -201,7 +190,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             }
         })
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -211,7 +200,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             return res.data
         
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -221,7 +210,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             toast.success(res.data)
         })
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -231,14 +220,14 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             toast.success(res.data)
         })
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
  export const PaymentSuccess = createAsyncThunk('paymentSuccess' , async () =>{
     try {
        const res = await axios.get(`${baseurl+userapi}/payment/success` , consfig)
-       console.log(res.data);
+      
        return res.data
     } catch (error) {
         console.log(error);
@@ -253,7 +242,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             toast.success(res.data)
         })
     } catch (error) {
-         toast.error(error.response.data);
+        //  toast.error(error.response.data);
     }
  })
 
@@ -265,7 +254,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
         })
        
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -275,7 +264,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
        const res=   await axios.get(`${baseurl+adminapi}/users`,adminheader)
        return res.data
     } catch (error) {
-         toast.error(error.response.data);   
+        //  toast.error(error.response.data);   
     }
  })
 
@@ -286,7 +275,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             toast.success(res.data)
         })
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -296,7 +285,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
        const res=  await axios.get(`${baseurl+adminapi}/products`,adminheader)
        return res.data
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -308,7 +297,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             toast.success(res.data)
         })
     } catch (error) {
-         toast.error(error.response.data);
+        //  toast.error(error.response.data);
     }
  })
 
@@ -319,7 +308,8 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
        const res =  await axios.get(`${baseurl+adminapi}/orders`,adminheader)
          return res.data
     } catch (error) {
-        toast.error(error.response.data);
+        console.log(error);
+        // toast.error(error.response.data);
     }
  })
 
@@ -329,18 +319,18 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
         const res =  await axios.get(`${baseurl+userapi}/wishlists`,consfig)
         return res.data
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
  export const PostWishlist = createAsyncThunk('postWishlist' , async (data)=>{
     try {
-        console.log(data);
+      
         await axios.post(`${baseurl+userapi}/${data.id}/wishlists`,{size : data.selectedSize._id},consfig).then((res)=>{
             toast.success(res.data)
         })
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -350,7 +340,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             toast.success(res.data)
         })
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -360,7 +350,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
         return res.data
         
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -370,7 +360,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
         return res.data
         
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -381,7 +371,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
             toast.success(res.data)
         })
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -392,7 +382,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
         })
     } catch (error) {
         console.log(error);
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -402,7 +392,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
         const res = await axios.get(`${baseurl+userapi}/cart/total`,consfig)
         return res.data
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -412,7 +402,7 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
         const res = await axios.get(`${baseurl+userapi}/profile`,consfig)
         return res.data
     } catch (error) {
-        toast.error(error.response.data);
+        // toast.error(error.response.data);
     }
  })
 
@@ -424,5 +414,24 @@ export const addcart = createAsyncThunk('addcart', async (data) => {
         })
     } catch (error) {
         toast.error(error);
+    }
+ })
+
+
+ export const GetUserOrders = createAsyncThunk('GetuserOrders', async ()=>{
+    try {
+        const res = await axios.get(`${baseurl+userapi}/order`,consfig)
+        return res.data
+    } catch (error) {
+        console.log(error);
+    }
+ })
+
+ export const GetSingleOrders = createAsyncThunk('GetSingleOrders' , async (id)=>{
+    try {
+        const res = await axios.get(`${baseurl+adminapi}/orders/${id}` , adminheader)
+        return res.data
+    } catch (error) {
+     console.log(error);   
     }
  })

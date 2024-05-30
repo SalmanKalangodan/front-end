@@ -16,7 +16,9 @@ function SuccessPayment() {
     
     
          dispacth(PaymentSuccess()).then((res)=>{
-            if (res.status === 200 && isSuccess) {
+          console.log(res);
+            // eslint-disable-next-line no-undef
+            if (res.status === 200) {
                 setData(res.payload[0])
               }
          })
