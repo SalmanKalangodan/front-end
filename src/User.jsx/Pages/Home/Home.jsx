@@ -16,7 +16,7 @@ import Nav2 from '../../Components/Nav2/Nav2.jsx'
 
 function Home() {
   return (
-    <div className='main'>
+    <div >
       {/* <Navbar /> */}
      <Navbar />
      <Parts />

@@ -30,7 +30,7 @@ function Navbar() {
     dispatch(GetWishlist()).then((res) => {
       setWishLength(res.payload.length);
     });
-  }, [cartLength, profile, wishLength, dispatch]);
+  }, [dispatch, profile]);
 
   const Logout = () => {
     localStorage.clear();

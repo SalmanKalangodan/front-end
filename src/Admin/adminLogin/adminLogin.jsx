@@ -15,8 +15,6 @@ function AdminLogin() {
     e.preventDefault()
     dispacth(Adminlogin(formData)).then(()=>{
       const token = localStorage.getItem('admintoken')
-      
-      
       if(token.length !== 9 ){
         Navigate('/admin/')
       }

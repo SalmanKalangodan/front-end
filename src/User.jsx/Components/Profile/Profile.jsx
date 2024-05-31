@@ -36,7 +36,7 @@ const ProfileView = () => {
         setLoading(false)
         setProfile(res.payload)
     })
-  }, []);
+  }, [dispacth, profile]);
 
   if (loading) {
     return <div className="text-center">Loading...</div>;
@@ -61,18 +61,18 @@ const ProfileView = () => {
       </div>
       <div className="text-center mb-6">
         <img
-          src={profile.profileimg || 'https://via.placeholder.com/150'}
+          src={profile?.profileimg || 'https://via.placeholder.com/150'}
           alt="Profile"
           className="w-32 h-32 rounded-full object-cover mx-auto shadow-md"
         />
       </div>
       <div className="mb-4">
         <h3 className="text-xl font-bold text-gray-700">Name</h3>
-        <p className="text-gray-600">{profile.username}</p>
+        <p className="text-gray-600">{profile?.username}</p>
       </div>
       <div className="mb-4">
         <h3 className="text-xl font-bold text-gray-700">Email</h3>
-        <p className="text-gray-600">{profile.email}</p>
+        <p className="text-gray-600">{profile?.email}</p>
       </div>
       <div className="mb-4">
         <h3 className="text-xl font-bold text-gray-700">Phone</h3>
