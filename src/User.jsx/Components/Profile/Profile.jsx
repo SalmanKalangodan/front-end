@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { FiEdit2 } from 'react-icons/fi';
 import Navbar from '../Navbar/Navbar';
 import { useDispatch } from 'react-redux';
@@ -20,23 +19,11 @@ const ProfileView = () => {
 //   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // const fetchProfile = async () => {
-    //   try {
-    //     const response = await axios.get('/api/profile'); // Adjust the API endpoint as needed
-    //     setProfile(response.data);
-    //     setLoading(false);
-    //   } catch (error) {
-    //     setError('Error fetching profile data');
-    //     setLoading(false);
-    //   }
-    // };
-
-    // fetchProfile();
     dispacth(GetProfile()).then((res)=>{
         setLoading(false)
         setProfile(res.payload)
     })
-  }, [dispacth, profile]);
+  }, [dispacth , profile]);
 
   if (loading) {
     return <div className="text-center">Loading...</div>;

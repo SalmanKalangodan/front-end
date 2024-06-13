@@ -15,7 +15,7 @@ export const GetProducts= createAsyncThunk("GetItem" , async ()=>{
 })
 //Get All Users
 
-//Get User With Using Id
+//Get User With Using Id 
 
 //Post Users In Registraion
 // export const PostUser = createAsyncThunk('Postuser', async (formData)=>{
@@ -57,14 +57,13 @@ export const userLogin = createAsyncThunk('userLogin' , async (formData) =>{
             localStorage.setItem('token', res.data.token) 
             localStorage.setItem('refresh_token' , res.data.refreshToken)
             localStorage.setItem('username' , res.data.username)
-            console.log(res.data);
             toast.success(res.data.message) 
+            
         })
      
     
     } catch (error) {
-        console.log(error);
-        // error.response.data? toast.error(error.response.data) : toast.error(error.response.data.message)
+        error.response.data? toast.error(error.response.data) : toast.error(error.response.data.message)
     }
 })
 

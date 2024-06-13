@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 
 
 export default function Example() {
-  const [open, setOpen] = useState(true)
   const [cartdata , setCartdata] = useState()
   const cart = useSelector((state)=>state.SearchSlice.Cart)
   const [Total , setTotal] = useState(0)

@@ -4,7 +4,6 @@ import Footer from "../Footer/Footer";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AddAddress } from "../../../Redux/ApiSlice/Tunk/Tunk";
-import AddressCard from "../Address/AddressCard";
 import { useNavigate } from "react-router-dom";
 
 
@@ -30,7 +29,7 @@ function Payment() {
 	<Navbar />
     <div className="flex p-6 justify-center">
     <section className="p-6 ">
-	<form novalidate="" action="" className="container flex flex-col mx-auto">
+	<form  action="" className="container flex flex-col mx-auto">
 	<div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
           <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>

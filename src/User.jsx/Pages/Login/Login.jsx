@@ -19,6 +19,7 @@ function Login() {
       
       if(token.length !== 9 && refreshToken.length !== 9){
         Navigate('/')
+        window.location.reload()
       }
     })
     
